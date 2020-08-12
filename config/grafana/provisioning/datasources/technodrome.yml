@@ -1,0 +1,24 @@
+apiVersion: 1
+
+datasources:
+- name: technodrome
+  type: influxdb
+  access: proxy
+  url: http://influxdb:8086
+  password:
+  user:
+  database: technodrome
+  basicAuth: false
+  basicAuthUser:
+  basicAuthPassword:
+  withCredentials:
+  isDefault: true
+  jsonData:
+     tlsAuth: false
+     tlsAuthWithCACert: false
+  secureJsonData:
+    tlsCACert: ""
+    tlsClientCert: ""
+    tlsClientKey: ""
+  version: 1
+  editable: true
