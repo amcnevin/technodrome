@@ -1,16 +1,34 @@
-# technodrome
+# Technodrome
 
+A pet project for collecting and monitoring sensor data around my house.
+
+Hardware:
+- Adafruit Feather Huzzah ESP8266
+- DHT11
+- BME680
+
+Software:
+- Adafruit C libraries
+- Mosquitto MQTT Broker
+- Telegraf
+- InfluxDB
+- Grafana
 
 #### key commands
 <code>docker-compose up</code>
 
 
 #### exec into broker
-<code>docker exec -it broker sh
-mosquitto_pub -V mqttv311 -h localhost -d -t technodrome/front/door -m "<PAYLOAD>"
+<code>docker exec -it broker sh</br>
+mosquitto_pub -V mqttv311 -h localhost -d -t TOPIC -m "PAYLOAD"
 </code>
 
-example payloads:
+example topics (WIP): 
+- technodrome/basement
+- technodrome/first_floor
+- technodrome/second_floor
+
+example payloads (WIP):
 - technodrome,location=office,unit=*C,type=temperature value=29.25
 - technodrome,location=office,unit=hpa,type=pressure value=972.80
 - technodrome,location=office,unit=%,type=humidity value=42.76
