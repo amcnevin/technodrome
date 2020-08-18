@@ -3,6 +3,7 @@ version: "3.8"
 services:
   grafana:
     image: grafana/grafana:5.1.0
+    container_name: grafana
     volumes: 
       - ./config/grafana/provisioning:/etc/grafana/provisioning
     ports:
@@ -11,6 +12,7 @@ services:
 
   broker:
     image: eclipse-mosquitto:1.6.10
+    container_name: broker
     volumes:
       - "./config/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf"
     ports:
@@ -19,6 +21,7 @@ services:
 
   influxdb:
     image: "influxdb:latest"
+    container_name: influxdb
     ports:
       - '8086:8086'
       - '8083:8083'
@@ -28,7 +31,14 @@ services:
       - INFLUXDB_DB=technodrome
       - INFLUXDB_ADMIN_USER=master_splinter
       - INFLUXDB_ADMIN_PASSWORD=pizzapizza
-      
+  
+  telegraf:
+    image: telegraf:latest
+    container_name: telegraf
+    restart: always
+    volumes:
+      - ./config/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+
 volumes:
     broker:
         driver: local
