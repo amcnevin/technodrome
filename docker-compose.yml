@@ -2,13 +2,13 @@ version: "3.8"
 
 services:
   grafana:
-    image: grafana/grafana:5.1.0
+    image: grafana/grafana:7.1.5
     container_name: grafana
     volumes: 
       - ./config/grafana/provisioning:/etc/grafana/provisioning
     ports:
       - 3000:3000
-    user: "104"
+    user: "472"
 
   broker:
     image: eclipse-mosquitto:1.6.10
