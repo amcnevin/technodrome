@@ -24,17 +24,20 @@ mosquitto_pub -V mqttv311 -h localhost -d -t TOPIC -m "PAYLOAD"
 </code>
 
 example topics (WIP): 
-- technodrome/basement
-- technodrome/first_floor
-- technodrome/second_floor
+- technodrome/<ROOM>/<SENSOR>
+- technodrome/hallway/bme680
+- technodrome/basement/dht11
 
 example payloads (WIP):
 - technodrome,location=office,unit=*C,type=temperature value=29.25
 - technodrome,location=office,unit=hpa,type=pressure value=972.80
 - technodrome,location=office,unit=%,type=humidity value=42.76
 - technodrome,location=office,unit=KOhms,type=voc value=194.70
-- technodrome,location=office,unit=m.type=altitude value=342.27
+- technodrome,location=office,unit=m,type=altitude value=342.27
 
+Persistence:
+The payload example above will afford that telegraf will write to the technodrome database and table.
+The columns will reflect: location, topic, type, unit and value
 
 #### exec and query influxdb
 <code>docker exec -it influxdb sh</br>
