@@ -24,7 +24,7 @@ mosquitto_pub -V mqttv311 -h localhost -d -t TOPIC -m "PAYLOAD"
 </code>
 
 example topics (WIP): 
-- technodrome/<ROOM>/<SENSOR>
+- technodrome/ROOM/SENSOR
 - technodrome/hallway/bme680
 - technodrome/basement/dht11
 
