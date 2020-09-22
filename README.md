@@ -54,9 +54,9 @@ select * from technodrome</br>
 |           | height(in)| diameter(in) | volume(in^3) | Gallons   |
 |-----------|--------|----------|--------------|-----------|
 | Total     | 22     | 18       | 5598.32      | 24.24     |
-| Pre-Pump  | 16     | 18       | 2035.75      | 8.8       |
-| Post-Pump | 20     | 18       | 509.94       | 2.21      |
-| Delta     |        |          | 1,526.81     | 6.61      |
+| Pre-Pump  | 6      | 18       | 1526.81      | 6.61      |
+| Post-Pump | 2      | 18       | 508.94       | 2.21      |
+| Delta     |        |          | 1,017.87     | 4.41     |
 
 * not accounting for existing pump displacement
 
