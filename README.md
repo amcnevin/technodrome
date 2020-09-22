@@ -6,6 +6,7 @@ Hardware:
 - Adafruit Feather Huzzah ESP8266
 - DHT11
 - BME680
+- HC-SR04
 
 Software:
 - Adafruit C libraries
@@ -47,4 +48,18 @@ select * from technodrome</br>
 </code>
 
 
+## Sump Pump Monitoring 
+#### South Side Pump Setup
+|           | height(in)| diameter(in) | volume(in^3) | Gallons   |
+|-----------|--------|----------|--------------|-----------|
+| Total     | 22     | 18       | 5598.32      | 24.24     |
+| Pre-Pump  | 16     | 18       | 2035.75      | 8.8       |
+| Post-Pump | 20     | 18       | 509.94       | 2.21      |
+| Delta     |        |          | 1,526.81     | 6.61      |
 
+* not accounting for existing pump displacement
+
+
+#### North Side Pump Setup
+
+-Coming soon!
