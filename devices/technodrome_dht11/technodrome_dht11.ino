@@ -41,6 +41,7 @@ void setup() {
  */
 void connectToWifi(){
   WiFi.begin(WLAN_SSID, WLAN_PASS);
+  WiFi.mode(WIFI_STA);
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
   }

@@ -5,19 +5,19 @@
 #include <bme680.h>
 #include <bme680_defs.h>
 
-#define WLAN_SSID       "<WIFI_SID>"
-#define WLAN_PASS       "<WIFI_PWD>"
+#define WLAN_SSID       "<SSID>"
+#define WLAN_PASS       "<PASSWORD>"
 
-#define TECHNODROME_SERVER      "<IP_ADDRESS>"
+#define TECHNODROME_SERVER      "<IP_ADDR>"
 #define TECHNODROME_PORT  1883
 
 // TODO find local sea level pressure
 #define SEALEVELPRESSURE_HPA (1013.25)
 
 Adafruit_BME680 bme; // I2C
-String LOCATION = "BASEMENT";
+String LOCATION = "HALLWAY";
 String DEVICE = "BME680";
-String TOPIC = "technodrome/BASEMENT/BME680";
+String TOPIC = "technodrome/HALLWAY/BME680";
 
 float interval = 1.8e+6;
 
@@ -39,6 +39,7 @@ void setup() {
  */
 void connectToWifi(){
   WiFi.begin(WLAN_SSID, WLAN_PASS);
+  WiFi.mode(WIFI_STA);
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
   }

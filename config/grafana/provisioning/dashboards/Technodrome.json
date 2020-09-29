@@ -108,6 +108,12 @@
               "key": "sensor",
               "operator": "=",
               "value": "SOUTH_SUMP_PUMP"
+            },
+            {
+              "condition": "OR",
+              "key": "sensor",
+              "operator": "=",
+              "value": "NORTH_SUMP_PUMP"
             }
           ]
         }
@@ -157,7 +163,9 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {},
+          "custom": {
+            "align": null
+          },
           "displayName": "South Pump",
           "mappings": [],
           "max": 22,
@@ -186,7 +194,7 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 12,
+        "w": 6,
         "x": 12,
         "y": 0
       },
@@ -241,6 +249,100 @@
       "timeFrom": null,
       "timeShift": null,
       "title": "Water Levels",
+      "type": "gauge"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "displayName": "North Pump",
+          "mappings": [],
+          "max": 22,
+          "min": 0,
+          "noValue": "NaN",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "light-yellow",
+                "value": 6
+              },
+              {
+                "color": "dark-red",
+                "value": 7
+              }
+            ]
+          },
+          "unit": "gallons"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 18,
+        "y": 0
+      },
+      "id": 16,
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "7.1.5",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT (3.14195 * (81)* ( 20 - last(\"value\") )) / 231 FROM \"technodrome\" WHERE (\"sensor\" = 'NORTH_SUMP_PUMP') AND $timeFilter ",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "North Water Level",
       "type": "gauge"
     },
     {
@@ -974,5 +1076,5 @@
   "timezone": "",
   "title": "Technodrome",
   "uid": "vk1YAnzgz",
-  "version": 36
+  "version": 43
 }

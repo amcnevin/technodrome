@@ -6,14 +6,14 @@
 #define WLAN_SSID       "<SSID>"
 #define WLAN_PASS       "<PASSWORD>"
 
-#define TECHNODROME_SERVER      "<IP_ADDR>>"
+#define TECHNODROME_SERVER      "<IP_ADDR>"
 #define TECHNODROME_PORT  1883
 
 
 
 String LOCATION = "BASEMENT";
-String DEVICE = "SOUTH_SUMP_PUMP";
-String TOPIC = "technodrome/BASEMENT/SOUTH_SUMP_PUMP";
+String DEVICE = "NORTH_SUMP_PUMP";
+String TOPIC = "technodrome/BASEMENT/NORTH_SUMP_PUMP";
 
 #define trigPin 14
 #define echoPin 12
@@ -29,7 +29,6 @@ void setup() {
   Serial.begin(9600);
   pinMode(0, OUTPUT);
   digitalWrite(0, HIGH); // board LED for liveness
-  delay(10);
   connectToWifi();
   setupDevice();
 }
@@ -53,8 +52,8 @@ void connectToWifi(){
  * Initiate Device reading and Sampling
  */
 void setupDevice() {
-  pinMode(trigPin, OUTPUT); 
-  pinMode(echoPin, INPUT); 
+  pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
+  pinMode(echoPin, INPUT); // Sets the echoPin as an Input  
 }
 
 /**
@@ -101,15 +100,15 @@ String getDistance() {
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
 
-  
+  // Sets the trigPin on HIGH state for 10 micro seconds
   digitalWrite(trigPin, HIGH);
   delayMicroseconds(10);
   digitalWrite(trigPin, LOW);
 
+  // Reads the echoPin, returns the sound wave travel time in microseconds
   duration = pulseIn(echoPin, HIGH);
 
   // Calculating the distance in inches
-  // TODO use Constants next time
   distance= String((duration*0.034/2)/2.54);
   
   return buildPayload("depth", "in", distance);
@@ -122,6 +121,8 @@ void loop() {
   if (!publisher.publish(getDistance().c_str())) {
     Serial.println(F("Failed reading distance"));
   }
+  //Serial.println(getDistance().c_str());
+
 
   // sleep for interval
   delay(interval);  
