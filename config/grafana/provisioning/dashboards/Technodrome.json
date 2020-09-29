@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 2,
+  "id": 1,
   "links": [],
   "panels": [
     {
@@ -437,6 +437,49 @@
               "value": "temperature"
             }
           ]
+        },
+        {
+          "alias": "PITTSBURGH",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "previous"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "weather",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "temperature"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "Pittsburgh"
+            }
+          ]
         }
       ],
       "thresholds": [
@@ -589,6 +632,49 @@
               "value": "humidity"
             }
           ]
+        },
+        {
+          "alias": "PITTSBURGH",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "previous"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "weather",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "humidity"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "Pittsburgh"
+            }
+          ]
         }
       ],
       "thresholds": [
@@ -647,6 +733,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "description": "",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -662,7 +749,7 @@
         "y": 16
       },
       "hiddenSeries": false,
-      "id": 10,
+      "id": 8,
       "legend": {
         "avg": false,
         "current": false,
@@ -730,7 +817,7 @@
             {
               "key": "type",
               "operator": "=",
-              "value": "altitude"
+              "value": "voc"
             }
           ]
         }
@@ -739,7 +826,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Altitude",
+      "title": "VOC",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -868,96 +955,9 @@
               "value": "pressure"
             }
           ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Air Pressure",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
         },
         {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 24
-      },
-      "hiddenSeries": false,
-      "id": 8,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "percentage": false,
-      "pluginVersion": "7.1.5",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "alias": "$tag_location",
+          "alias": "PITTSBURGH",
           "groupBy": [
             {
               "params": [
@@ -967,27 +967,21 @@
             },
             {
               "params": [
-                "location"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
                 "previous"
               ],
               "type": "fill"
             }
           ],
-          "measurement": "technodrome",
+          "measurement": "weather",
           "orderByTime": "ASC",
           "policy": "default",
-          "refId": "A",
+          "refId": "B",
           "resultFormat": "time_series",
           "select": [
             [
               {
                 "params": [
-                  "value"
+                  "pressure"
                 ],
                 "type": "field"
               },
@@ -999,9 +993,9 @@
           ],
           "tags": [
             {
-              "key": "type",
+              "key": "city",
               "operator": "=",
-              "value": "voc"
+              "value": "Pittsburgh"
             }
           ]
         }
@@ -1010,7 +1004,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "VOC",
+      "title": "Air Pressure",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1076,5 +1070,5 @@
   "timezone": "",
   "title": "Technodrome",
   "uid": "vk1YAnzgz",
-  "version": 43
+  "version": 1
 }
