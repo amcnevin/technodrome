@@ -194,7 +194,7 @@
           ],
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT (3.14195 * (81)* ( 20 - last(\"value\") )) / 231 FROM \"technodrome\" WHERE (\"sensor\" = 'NORTH_SUMP_PUMP') AND $timeFilter ",
+          "query": "SELECT (3.14195 * (81)* ( 22 - last(\"value\") )) / 231 FROM \"technodrome\" WHERE (\"sensor\" = 'NORTH_SUMP_PUMP') AND $timeFilter ",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "table",
@@ -1031,5 +1031,5 @@
   "timezone": "",
   "title": "Technodrome",
   "uid": "vk1YAnzgz",
-  "version": 4
+  "version": 5
 }
