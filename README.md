@@ -20,9 +20,13 @@ Software:
 
 
 #### exec into broker
-<code>docker exec -it broker sh</br>
+<code>docker exec -it broker sh</code>
+<br/>
+<code>
 mosquitto_pub -V mqttv311 -h localhost -d -t TOPIC -m "PAYLOAD"
 </code>
+
+<br/>
 
 example topics (WIP): 
 - technodrome/ROOM/SENSOR
@@ -42,11 +46,14 @@ The payload example above will afford that telegraf will write to the technodrom
 The columns will reflect: location, sensor, topic, type(measuring), unit and value
 
 #### exec and query influxdb
-<code>docker exec -it influxdb sh</br>
-influx</br>
-use technodrome</br>
-select * from technodrome</br>
-</code>
+<code>docker exec -it influxdb sh</code>
+<br/>
+<code>influx</code>
+<br/>
+<code>select * from technodrome</code>
+<br/>
+<code>use technodrome</code>
+<br/>
 
 
 ## Sump Pump Monitoring 
@@ -63,4 +70,4 @@ select * from technodrome</br>
 
 #### North Side Pump Setup
 
--Coming soon!
+-Coming soon or never!
