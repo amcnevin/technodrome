@@ -45,12 +45,12 @@
             "type": "query"
           }
         ],
-        "executionErrorState": "alerting",
+        "executionErrorState": "keep_state",
         "for": "5m",
         "frequency": "1m",
         "handler": 1,
         "name": "Pump Level alert",
-        "noDataState": "no_data",
+        "noDataState": "ok",
         "notifications": []
       },
       "aliasColors": {},
@@ -160,7 +160,7 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:916",
+          "$$hashKey": "object:62",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -1066,5 +1066,5 @@
   "timezone": "",
   "title": "Technodrome",
   "uid": "vk1YAnzgz",
-  "version": 15
+  "version": 16
 }
