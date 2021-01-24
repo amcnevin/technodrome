@@ -461,7 +461,7 @@
       "id": 4,
       "legend": {
         "alignAsTable": true,
-        "avg": true,
+        "avg": false,
         "current": true,
         "max": false,
         "min": false,
@@ -978,5 +978,5 @@
   "timezone": "",
   "title": "Technodrome",
   "uid": "vk1YAnzgz",
-  "version": 9
+  "version": 10
 }
