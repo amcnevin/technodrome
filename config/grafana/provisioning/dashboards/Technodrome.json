@@ -409,9 +409,9 @@
           {
             "evaluator": {
               "params": [
-                35
+                65
               ],
-              "type": "lt"
+              "type": "gt"
             },
             "operator": {
               "type": "and"
@@ -430,12 +430,12 @@
             "type": "query"
           }
         ],
-        "executionErrorState": "alerting",
+        "executionErrorState": "keep_state",
         "for": "0",
         "frequency": "1m",
         "handler": 1,
         "name": "Humidity (%) alert",
-        "noDataState": "no_data",
+        "noDataState": "ok",
         "notifications": []
       },
       "aliasColors": {},
@@ -578,12 +578,12 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:494",
+          "$$hashKey": "object:243",
           "colorMode": "critical",
           "fill": true,
           "line": true,
-          "op": "lt",
-          "value": 35,
+          "op": "gt",
+          "value": 65,
           "yaxis": "left"
         }
       ],
@@ -980,7 +980,7 @@
   "timezone": "",
   "title": "Technodrome",
   "uid": "vk1YAnzgz",
-  "version": 12
+  "version": 13
 }{
   "annotations": {
     "list": [
@@ -1392,9 +1392,9 @@
           {
             "evaluator": {
               "params": [
-                35
+                65
               ],
-              "type": "lt"
+              "type": "gt"
             },
             "operator": {
               "type": "and"
@@ -1413,12 +1413,12 @@
             "type": "query"
           }
         ],
-        "executionErrorState": "alerting",
+        "executionErrorState": "keep_state",
         "for": "0",
         "frequency": "1m",
         "handler": 1,
         "name": "Humidity (%) alert",
-        "noDataState": "no_data",
+        "noDataState": "ok",
         "notifications": []
       },
       "aliasColors": {},
@@ -1561,12 +1561,12 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:494",
+          "$$hashKey": "object:243",
           "colorMode": "critical",
           "fill": true,
           "line": true,
-          "op": "lt",
-          "value": 35,
+          "op": "gt",
+          "value": 65,
           "yaxis": "left"
         }
       ],
@@ -1963,5 +1963,5 @@
   "timezone": "",
   "title": "Technodrome",
   "uid": "vk1YAnzgz",
-  "version": 12
+  "version": 13
 }
