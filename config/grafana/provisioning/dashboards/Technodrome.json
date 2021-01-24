@@ -129,100 +129,6 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {},
-          "displayName": "North Pump",
-          "mappings": [],
-          "max": 22,
-          "min": 0,
-          "noValue": "NaN",
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "dark-green",
-                "value": null
-              },
-              {
-                "color": "light-yellow",
-                "value": 6
-              },
-              {
-                "color": "dark-red",
-                "value": 7
-              }
-            ]
-          },
-          "unit": "gallons"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 6,
-        "x": 12,
-        "y": 0
-      },
-      "id": 16,
-      "options": {
-        "reduceOptions": {
-          "calcs": [
-            "last"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true
-      },
-      "pluginVersion": "7.1.5",
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT (3.14195 * (81)* ( 22 - last(\"value\") )) / 231 FROM \"technodrome\" WHERE (\"sensor\" = 'NORTH_SUMP_PUMP') AND $timeFilter ",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "table",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "North Water Level",
-      "type": "gauge"
-    },
-    {
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
           "custom": {
             "align": null
           },
@@ -312,42 +218,6 @@
       "type": "gauge"
     },
     {
-      "alert": {
-        "alertRuleTags": {},
-        "conditions": [
-          {
-            "evaluator": {
-              "params": [
-                65,
-                75
-              ],
-              "type": "outside_range"
-            },
-            "operator": {
-              "type": "and"
-            },
-            "query": {
-              "params": [
-                "A",
-                "5m",
-                "now"
-              ]
-            },
-            "reducer": {
-              "params": [],
-              "type": "last"
-            },
-            "type": "query"
-          }
-        ],
-        "executionErrorState": "alerting",
-        "for": "5m",
-        "frequency": "5m",
-        "handler": 1,
-        "name": "Temperature (F) alert",
-        "noDataState": "alerting",
-        "notifications": []
-      },
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -489,26 +359,7 @@
           ]
         }
       ],
-      "thresholds": [
-        {
-          "$$hashKey": "object:2090",
-          "colorMode": "critical",
-          "fill": true,
-          "line": true,
-          "op": "lt",
-          "value": 65,
-          "yaxis": "left"
-        },
-        {
-          "$$hashKey": "object:2091",
-          "colorMode": "critical",
-          "fill": true,
-          "line": true,
-          "op": "gt",
-          "value": 75,
-          "yaxis": "left"
-        }
-      ],
+      "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
@@ -558,7 +409,7 @@
           {
             "evaluator": {
               "params": [
-                50
+                35
               ],
               "type": "lt"
             },
@@ -727,12 +578,12 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:1711",
+          "$$hashKey": "object:494",
           "colorMode": "critical",
           "fill": true,
           "line": true,
           "op": "lt",
-          "value": 50,
+          "value": 35,
           "yaxis": "left"
         }
       ],
@@ -1107,7 +958,7 @@
     "list": []
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {
