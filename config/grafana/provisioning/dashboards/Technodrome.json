@@ -242,12 +242,12 @@
       "id": 2,
       "legend": {
         "alignAsTable": true,
-        "avg": true,
+        "avg": false,
         "current": true,
         "hideEmpty": false,
         "hideZero": false,
-        "max": true,
-        "min": true,
+        "max": false,
+        "min": false,
         "rightSide": true,
         "show": true,
         "total": false,
@@ -978,5 +978,5 @@
   "timezone": "",
   "title": "Technodrome",
   "uid": "vk1YAnzgz",
-  "version": 8
+  "version": 9
 }
