@@ -12,14 +12,14 @@
 
 
 String LOCATION = "BASEMENT";
-String DEVICE = "NORTH_SUMP_PUMP";
-String TOPIC = "technodrome/BASEMENT/NORTH_SUMP_PUMP";
+String DEVICE = "SOUTH_SUMP_PUMP";
+String TOPIC = "technodrome/BASEMENT/SOUTH_SUMP_PUMP";
 
 #define trigPin 14
 #define echoPin 12
 
-/* 5 minute interval instead */
-float interval = 300000;
+/* 1 minute interval instead */
+float interval = 60000;
 
 WiFiClient client;
 Adafruit_MQTT_Client mqtt(&client, TECHNODROME_SERVER, TECHNODROME_PORT, "", "");
