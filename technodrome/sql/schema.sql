@@ -1,0 +1,3 @@
+CREATE DATABASE technodrome;
+
+CREATE USER technodrome WITH CREATEDB ENCRYPTED PASSWORD 'pizzapizza';

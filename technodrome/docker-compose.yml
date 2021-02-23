@@ -1,0 +1,34 @@
+version: '3.9'
+
+services:
+
+  postgres:
+    image: "postgres:latest"
+    container_name: postgres
+    ports:
+      - 5432:5432
+    environment: 
+      - POSTGRES_PASSWORD=pizzapizza
+    volumes:
+      - postgres-storage:/var/lib/postgres
+      - ./sql/schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
+      
+      
+  
+  technodrome:
+    container_name: technodrome
+    build: .
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./:/usr/web/app
+    ports:
+      - "8000:8000"
+    depends_on: 
+      - postgres
+    
+  
+volumes:
+    postgres-storage:
+        driver: local
+    
+  
