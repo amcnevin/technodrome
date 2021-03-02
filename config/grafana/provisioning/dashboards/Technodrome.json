@@ -24,7 +24,7 @@
           {
             "evaluator": {
               "params": [
-                16
+                15
               ],
               "type": "lt"
             },
@@ -160,12 +160,12 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:62",
+          "$$hashKey": "object:148",
           "colorMode": "critical",
           "fill": true,
           "line": true,
           "op": "lt",
-          "value": 16,
+          "value": 15,
           "yaxis": "left"
         }
       ],
@@ -402,7 +402,7 @@
           ]
         },
         {
-          "alias": "PITTSBURGH",
+          "alias": "$tag_city",
           "groupBy": [
             {
               "params": [
@@ -412,7 +412,13 @@
             },
             {
               "params": [
-                "linear"
+                "city"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "previous"
               ],
               "type": "fill"
             }
@@ -436,13 +442,7 @@
               }
             ]
           ],
-          "tags": [
-            {
-              "key": "city",
-              "operator": "=",
-              "value": "Pittsburgh"
-            }
-          ]
+          "tags": []
         }
       ],
       "thresholds": [],
@@ -584,7 +584,7 @@
           ]
         },
         {
-          "alias": "PITTSBURGH",
+          "alias": "$tag_city",
           "groupBy": [
             {
               "params": [
@@ -594,7 +594,13 @@
             },
             {
               "params": [
-                "none"
+                "city"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "previous"
               ],
               "type": "fill"
             }
@@ -618,13 +624,7 @@
               }
             ]
           ],
-          "tags": [
-            {
-              "key": "city",
-              "operator": "=",
-              "value": "Pittsburgh"
-            }
-          ]
+          "tags": []
         }
       ],
       "thresholds": [],
@@ -906,7 +906,7 @@
           ]
         },
         {
-          "alias": "PITTSBURGH",
+          "alias": "$tag_city",
           "groupBy": [
             {
               "params": [
@@ -916,7 +916,13 @@
             },
             {
               "params": [
-                "linear"
+                "city"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "previous"
               ],
               "type": "fill"
             }
@@ -940,13 +946,7 @@
               }
             ]
           ],
-          "tags": [
-            {
-              "key": "city",
-              "operator": "=",
-              "value": "Pittsburgh"
-            }
-          ]
+          "tags": []
         }
       ],
       "thresholds": [],
@@ -993,7 +993,7 @@
       }
     }
   ],
-  "refresh": false,
+  "refresh": "5m",
   "schemaVersion": 26,
   "style": "dark",
   "tags": [],
@@ -1001,7 +1001,7 @@
     "list": []
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-3h",
     "to": "now"
   },
   "timepicker": {
@@ -1021,5 +1021,5 @@
   "timezone": "",
   "title": "Technodrome",
   "uid": "vk1YAnzgz",
-  "version": 18
+  "version": 19
 }
