@@ -14,12 +14,14 @@ Software:
 - Telegraf
 - InfluxDB
 - Grafana
+- Django
+- Postgres
 
 #### key commands
 <code>docker-compose up</code>
 
 
-#### exec into broker
+#### exec into broker and publish test messages
 <code>docker exec -it broker sh</code>
 <br/>
 <code>
@@ -50,11 +52,20 @@ The columns will reflect: location, sensor, topic, type(measuring), unit and val
 <br/>
 <code>influx</code>
 <br/>
-<code>select * from technodrome</code>
-<br/>
 <code>use technodrome</code>
 <br/>
+<code>select * from technodrome</code>
+<br/>
 
+## Initialize Django Server
+Initialize DB:
+<br/>
+<code>python3 manage.py migrate</code>
+<br/>
+Initialize SuperUser Account:
+<br/>
+<code>python3 manage.py createsuperuser</code>
+<br/>
 
 ## Sump Pump Monitoring 
 #### South Side Pump Setup

@@ -39,8 +39,37 @@ services:
     volumes:
       - ./config/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
 
+  postgres:
+    image: "postgres:latest"
+    container_name: postgres
+    ports:
+      - 5432:5432
+    environment: 
+      - POSTGRES_PASSWORD=pizzapizza
+    volumes:
+      - postgres-storage:/var/lib/postgres
+      - ./technodrome/sql/schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
+      
+  technodrome:
+    container_name: technodrome
+    
+    build: 
+      context: .    
+      dockerfile: ./technodrome/dockerfile
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./:/usr/web/app
+    ports:
+      - "8000:8000"
+    depends_on: 
+      - postgres
+    
+  
 volumes:
     broker:
         driver: local
     influxdb-storage:
         driver: local
+    postgres-storage:
+        driver: local
+    
