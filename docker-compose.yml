@@ -54,8 +54,8 @@ services:
     container_name: technodrome
     
     build: 
-      context: .    
-      dockerfile: ./technodrome/dockerfile
+      context: ./technodrome    
+      dockerfile: ./dockerfile
     command: python3 manage.py runserver 0.0.0.0:8000
     volumes:
       - ./:/usr/web/app
