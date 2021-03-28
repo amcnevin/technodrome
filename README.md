@@ -57,6 +57,11 @@ The columns will reflect: location, sensor, topic, type(measuring), unit and val
 <code>select * from technodrome</code>
 <br/>
 
+## Micropython commands:
+<code>esptool.py --baud 460900 write_flash --flash_size=detect 0 esp8266-20210202-v1.14.bin </code><br/>
+<code>ampy --port COM3 --baud 115200 put devices/mp/main.py </code><br/>
+<code>picocom /dev/ttyS3 -b115200</code><br/>
+
 ## Initialize Django Server
 Initialize DB:
 <br/>

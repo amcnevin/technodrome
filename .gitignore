@@ -1,3 +1,6 @@
 devices/libraries/*
 
 .vscode/*
+
+*/__pycache__
+*.pyc
